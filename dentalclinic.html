@@ -1,0 +1,3065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourCompany | Multispeciality Dental Clinic</title>
+    <meta name="description"
+        content="YourCompany - Premier multispeciality dental clinic. Expert dentists, modern tech, pain-free treatments for the entire family.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           1. DESIGN SYSTEM & CSS VARIABLES
+           ========================================== */
+        :root {
+            --primary: #0d9488;
+            --primary-dark: #0f766e;
+            --primary-light: #ccfbf1;
+            --primary-subtle: #f0fdfa;
+            --accent-pink: #e11d48;
+            --accent-pink-bg: #ffe4e6;
+            --accent-gold: #d97706;
+            --accent-gold-bg: #fef3c7;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --white: #ffffff;
+
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px -5px rgba(13, 148, 136, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 30px -10px rgba(15, 118, 110, 0.15);
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==========================================
+           2. GLOBAL RESET & BASE STYLES
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--slate-700);
+            background-color: var(--slate-50);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            color: var(--slate-900);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ==========================================
+           3. UI COMPONENTS & BUTTONS
+           ========================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            background-color: var(--slate-100);
+            transform: translateY(-2px);
+            color: var(--primary-dark);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline-white:hover {
+            background-color: var(--white);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Badges & Pills */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.825rem;
+            font-weight: 600;
+        }
+
+        .badge-pink {
+            background-color: var(--accent-pink-bg);
+            color: var(--accent-pink);
+            border: 1px solid rgba(225, 29, 72, 0.2);
+        }
+
+        .badge-gold {
+            background-color: var(--accent-gold-bg);
+            color: var(--accent-gold);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+
+        .badge-teal {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+        }
+
+        /* Icon Circles */
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Section Headings */
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .section-header .sub-tag {
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--slate-900);
+        }
+
+        .section-header p {
+            color: var(--slate-600);
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================
+           4. HEADER & NAVBAR
+           ========================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--slate-200);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        /* Brand Logo */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            line-height: 1.1;
+            color: var(--slate-900);
+        }
+
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Navigation Links */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--slate-600);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Header Right Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--slate-800);
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           5. VIEW CONTAINER & TAB SYSTEM
+           ========================================== */
+        .page-view {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .page-view.active-view {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================
+           6. SECTION 1: HOME PAGE VIEW
+           ========================================== */
+        /* Hero Banner */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(13, 148, 136, 0.65) 100%),
+                url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 6rem 0 7rem 0;
+            margin-bottom: 0;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-title {
+            font-size: 3.25rem;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+            line-height: 1.15;
+            font-weight: 800;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.25rem;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Feature Bar (6 Box Grid) */
+        .feature-bar-section {
+            margin-top: -3.5rem;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 4rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--slate-200);
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 0.75rem 0.5rem;
+            border-right: 1px solid var(--slate-100);
+            transition: var(--transition);
+        }
+
+        .feature-item:last-child {
+            border-right: none;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-item i {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .feature-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .feature-item p {
+            font-size: 0.775rem;
+            color: var(--slate-500);
+            line-height: 1.3;
+        }
+
+        /* Featured Services Preview (Home) */
+        .featured-services-section {
+            padding: 4rem 0;
+        }
+
+        .services-home-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-home-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--slate-200);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-home-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-home-card .icon-circle {
+            margin-bottom: 1.25rem;
+        }
+
+        .service-home-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-home-card p {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-home-card .link-btn {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .service-home-card .link-btn:hover {
+            gap: 0.6rem;
+        }
+
+        .center-btn-wrapper {
+            text-align: center;
+        }
+
+        /* Why Choose Section */
+        .why-choose-section {
+            padding: 4.5rem 0;
+            background-color: var(--white);
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .why-choose-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .why-item .icon-circle {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .why-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .why-item p {
+            font-size: 0.925rem;
+            color: var(--slate-600);
+        }
+
+        .why-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .why-image-wrapper img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+        }
+
+        /* Home Reviews Section */
+        .home-reviews-section {
+            padding: 5rem 0;
+        }
+
+        .reviews-grid-home {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-info h4 {
+            font-size: 1.05rem;
+        }
+
+        .reviewer-info span {
+            font-size: 0.8rem;
+            color: var(--slate-400);
+        }
+
+        .stars-row {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+        }
+
+        .review-body p {
+            font-size: 0.925rem;
+            color: var(--slate-600);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Banner CTA */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 3.5rem 2rem;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            font-size: 2.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-banner .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================
+           7. SECTION 2: ABOUT PAGE VIEW
+           ========================================== */
+        .about-hero {
+            text-align: center;
+            padding: 3.5rem 0 2.5rem 0;
+        }
+
+        .about-story-section {
+            padding: 2rem 0 4rem 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .story-content p {
+            font-size: 0.975rem;
+            color: var(--slate-600);
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .story-image-box {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .story-image-box img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+        }
+
+        /* Core Values */
+        .core-values-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: var(--slate-50);
+            border-radius: var(--radius-md);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--slate-200);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-card .icon-circle {
+            margin: 0 auto 1.25rem auto;
+        }
+
+        .value-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .value-card p {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 4.5rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-img-wrapper {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .team-details {
+            padding: 1.5rem;
+        }
+
+        .team-details h3 {
+            font-size: 1.15rem;
+            color: var(--slate-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .team-qual {
+            font-size: 0.775rem;
+            color: var(--slate-500);
+            margin-bottom: 0.35rem;
+        }
+
+        .team-exp {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            margin-bottom: 0.75rem;
+        }
+
+        .team-bio {
+            font-size: 0.825rem;
+            color: var(--slate-600);
+            line-height: 1.4;
+        }
+
+        /* Facility Gallery */
+        .facility-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .facility-card {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            height: 240px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .facility-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .facility-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .facility-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ==========================================
+           8. SECTION 3: SERVICES PAGE VIEW
+           ========================================== */
+        .services-page-header {
+            text-align: center;
+            padding: 3.5rem 0 2.5rem 0;
+        }
+
+        .services-main-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-full-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-full-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-full-card .icon-circle {
+            margin-bottom: 1.25rem;
+        }
+
+        .service-full-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-full-card p.description {
+            font-size: 0.925rem;
+            color: var(--slate-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .service-included-box {
+            background-color: var(--slate-50);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-top: auto;
+            border: 1px dashed var(--slate-200);
+        }
+
+        .service-included-box h5 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--slate-500);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-included-box p {
+            font-size: 0.85rem;
+            color: var(--slate-700);
+            line-height: 1.4;
+        }
+
+        /* Insurance & Payment */
+        .insurance-card {
+            background: var(--primary-subtle);
+            border: 1px solid var(--primary-light);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .insurance-card h3 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            color: var(--slate-900);
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .insurance-col h4 {
+            font-size: 1.15rem;
+            margin-bottom: 1.25rem;
+            color: var(--slate-900);
+        }
+
+        .insurance-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .insurance-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--slate-700);
+        }
+
+        .insurance-list li i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           9. SECTION 4: REVIEWS PAGE VIEW
+           ========================================== */
+        .reviews-page-header {
+            text-align: center;
+            padding: 3.5rem 0 2rem 0;
+        }
+
+        .overall-score-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .big-stars {
+            color: var(--accent-gold);
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .big-score-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-subtext {
+            color: var(--slate-500);
+            font-size: 0.95rem;
+        }
+
+        /* Stat Counter Box Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-card .number {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-card .label {
+            font-size: 0.875rem;
+            color: var(--slate-500);
+            font-weight: 600;
+        }
+
+        /* Filter Pills */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-pill {
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--slate-200);
+            background: var(--white);
+            color: var(--slate-600);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-pill:hover,
+        .filter-pill.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .reviews-page-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        /* ==========================================
+           10. SECTION 5: CONTACT PAGE VIEW
+           ========================================== */
+        .contact-page-header {
+            text-align: center;
+            padding: 3.5rem 0 2.5rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            gap: 1.25rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .info-card p,
+        .info-card a {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+
+        .info-card a:hover {
+            color: var(--primary);
+        }
+
+        .hours-table {
+            width: 100%;
+            font-size: 0.85rem;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+        }
+
+        .hours-table td {
+            padding: 0.25rem 0;
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        /* Form Styling */
+        .contact-form-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-form-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            background-color: var(--slate-50);
+            color: var(--slate-800);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 2rem 0 4rem 0;
+        }
+
+        .map-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-md);
+        }
+
+        .map-iframe-box {
+            width: 100%;
+            height: 380px;
+            background-color: #e5e3df;
+            position: relative;
+        }
+
+        .map-subtext {
+            padding: 1rem 1.5rem;
+            background: var(--slate-50);
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--slate-600);
+            border-top: 1px solid var(--slate-200);
+        }
+
+        /* ==========================================
+           11. FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: var(--slate-900);
+            color: var(--slate-400);
+            padding: 4rem 0 2rem 0;
+            border-top: 1px solid var(--slate-800);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about .brand-logo {
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-about .brand-text h1 {
+            color: var(--white);
+        }
+
+        .footer-about p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate-800);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================
+           12. MODAL DIALOGS & TOAST
+           ========================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 520px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+            transform: translateY(20px);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .modal-overlay.open .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: var(--slate-400);
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: var(--slate-800);
+        }
+
+        /* Toast Alert */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================
+           13. RESPONSIVE BREAKPOINTS & MOBILE UX
+           ========================================== */
+        .mobile-sticky-bar {
+            display: none;
+        }
+
+        .mobile-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-backdrop.show {
+            display: block;
+            opacity: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .services-home-grid,
+            .values-grid,
+            .team-grid,
+            .stats-grid,
+            .services-main-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-choose-grid,
+            .story-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 64px;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .site-header {
+                box-shadow: var(--shadow-sm);
+            }
+
+            .navbar {
+                height: 64px;
+                padding: 0 0.85rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .brand-logo {
+                gap: 0.5rem;
+                max-width: calc(100% - 110px);
+                align-items: center;
+            }
+
+            .brand-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 0.95rem;
+                border-radius: 8px;
+                flex-shrink: 0;
+            }
+
+            .brand-text h1 {
+                font-size: 1.05rem;
+                line-height: 1.2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .brand-text span {
+                display: none !important;
+            }
+
+            .header-actions {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .header-actions .badge {
+                display: none;
+            }
+
+            .header-actions .btn-primary {
+                width: 38px;
+                height: 38px;
+                padding: 0;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.95rem;
+                flex-shrink: 0;
+            }
+
+            .header-actions .btn-primary .call-text {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                background: var(--slate-100);
+                color: var(--slate-800);
+                font-size: 1.15rem;
+                border: 1px solid var(--slate-200);
+                flex-shrink: 0;
+                transition: var(--transition);
+            }
+
+            .mobile-toggle:active {
+                background: var(--slate-200);
+            }
+
+            /* Mobile Navigation Drawer */
+            .nav-menu {
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.4rem;
+                border-bottom: 1px solid var(--slate-200);
+                box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+                display: none;
+                z-index: 999;
+                max-height: calc(100vh - 64px);
+                overflow-y: auto;
+            }
+
+            .nav-menu.open {
+                display: flex;
+                animation: slideDownMenu 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+
+            @keyframes slideDownMenu {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border-radius: var(--radius-md);
+                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: var(--slate-700);
+            }
+
+            .nav-link:hover,
+            .nav-link.active {
+                background-color: var(--primary-subtle);
+                color: var(--primary-dark);
+            }
+
+            .nav-link.active::after {
+                display: none;
+            }
+
+            /* Symmetrical Centered Hero Section for Mobile */
+            .hero-section {
+                padding: 2.75rem 0 4rem 0;
+                border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            }
+
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .hero-badges {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 0 auto 1.25rem auto;
+                flex-wrap: wrap;
+            }
+
+            .hero-badges .badge {
+                font-size: 0.775rem;
+                padding: 0.3rem 0.75rem;
+            }
+
+            .hero-title {
+                text-align: center;
+                font-size: clamp(1.65rem, 6.2vw, 2.2rem);
+                line-height: 1.22;
+                margin: 0 auto 1rem auto;
+            }
+
+            .hero-description {
+                text-align: center;
+                font-size: 0.95rem;
+                margin: 0 auto 1.75rem auto;
+                line-height: 1.55;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                max-width: 340px;
+                margin: 0 auto;
+                gap: 0.75rem;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                padding: 0.85rem 1.25rem;
+                font-size: 0.95rem;
+                justify-content: center;
+            }
+
+            /* Perfect 2-Column Uniform Feature Cards */
+            .feature-bar-section {
+                margin-top: 1.5rem;
+                margin-bottom: 2.75rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+                background: var(--white);
+                padding: 0.85rem;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-md);
+                border: 1px solid var(--slate-200);
+            }
+
+            .feature-item {
+                text-align: center;
+                padding: 1rem 0.5rem;
+                background: var(--slate-50);
+                border: 1px solid var(--slate-200);
+                border-radius: var(--radius-md);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .feature-item i {
+                font-size: 1.4rem;
+                color: var(--primary);
+                margin-bottom: 0.5rem;
+                display: inline-block;
+            }
+
+            .feature-item h4 {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: var(--slate-900);
+                margin-bottom: 0.25rem;
+                text-align: center;
+                line-height: 1.25;
+            }
+
+            .feature-item p {
+                font-size: 0.725rem;
+                color: var(--slate-500);
+                text-align: center;
+                line-height: 1.35;
+            }
+
+            /* Section Headers & CTA */
+            .section-header {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 1.55rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .section-header p {
+                font-size: 0.9rem;
+            }
+
+            .cta-banner {
+                padding: 2rem 1.25rem;
+                margin: 2.25rem 0;
+                border-radius: var(--radius-lg);
+                text-align: center;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.55rem;
+            }
+
+            .cta-banner p {
+                font-size: 0.925rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-banner .btn-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
+            }
+
+            .cta-banner .btn-group .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Uniform Single-Column Grids for Mobile */
+            .services-home-grid,
+            .reviews-grid-home,
+            .values-grid,
+            .team-grid,
+            .services-main-grid,
+            .reviews-page-grid,
+            .facility-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .service-home-card,
+            .service-full-card,
+            .value-card,
+            .team-card,
+            .review-card {
+                padding: 1.35rem 1.15rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 1rem 0.5rem;
+            }
+
+            .stat-card .number {
+                font-size: 1.65rem;
+            }
+
+            .stat-card .label {
+                font-size: 0.775rem;
+            }
+
+            .why-image-wrapper img,
+            .story-image-box img {
+                height: 240px;
+                border-radius: var(--radius-lg);
+            }
+
+            .insurance-card {
+                padding: 1.35rem 1.15rem;
+                border-radius: var(--radius-lg);
+            }
+
+            .insurance-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            /* Sticky Mobile Bottom CTA Bar */
+            .mobile-sticky-bar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(12px);
+                border-top: 1px solid var(--slate-200);
+                padding: 0.6rem 0.85rem;
+                display: flex;
+                gap: 0.6rem;
+                z-index: 990;
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+            }
+
+            .mobile-sticky-bar .btn {
+                flex: 1;
+                padding: 0.75rem 0.5rem;
+                font-size: 0.875rem;
+                border-radius: var(--radius-full);
+            }
+
+            .btn-outline-sticky {
+                background: var(--slate-100);
+                color: var(--slate-800);
+                border: 1px solid var(--slate-300);
+            }
+
+            .btn-primary-sticky {
+                background: var(--primary);
+                color: var(--white);
+                box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0 0.75rem;
+            }
+
+            .brand-text h1 {
+                max-width: 140px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER & NAVIGATION BAR
+         ========================================== -->
+    <header class="site-header">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="#home" class="brand-logo" onclick="switchTab('home')">
+                <div class="brand-icon demo-brand-icon">YC</div>
+                <div class="brand-text">
+                    <h1 class="demo-brand-name">YourCompany</h1>
+                    <span class="demo-brand-sub">YourCompany - Multispeciality Dental Clinic</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" onclick="switchTab('home')">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="switchTab('about')">About</a></li>
+                <li><a href="#services" class="nav-link" onclick="switchTab('services')">Services</a></li>
+                <li><a href="#reviews" class="nav-link" onclick="switchTab('reviews')">Reviews</a></li>
+                <li><a href="#contact" class="nav-link" onclick="switchTab('contact')">Contact</a></li>
+            </ul>
+
+            <!-- Right Actions / Badges -->
+            <div class="header-actions">
+                <span class="badge badge-pink"><i class="fa-solid fa-award"></i> Premier Clinic</span>
+                <span class="badge badge-gold"><i class="fa-solid fa-star"></i> 4.9 (250+)</span>
+                <button class="btn btn-primary" onclick="openCallModal()">
+                    <i class="fa-solid fa-phone"></i> <span class="call-text">Call Now</span>
+                </button>
+                <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Backdrop Overlay -->
+    <div class="mobile-backdrop" id="mobileBackdrop" onclick="closeMobileMenu()"></div>
+
+    <!-- MAIN VIEW CONTAINER -->
+    <main>
+
+        <!-- ==========================================
+             VIEW 1: HOME PAGE
+             ========================================== -->
+        <section id="view-home" class="page-view active-view">
+
+            <!-- Hero Banner -->
+            <div class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-badges">
+                            <span class="badge badge-pink"><i class="fa-solid fa-shield-heart"></i> Patient
+                                Centric</span>
+                            <span class="badge badge-teal"><i class="fa-solid fa-star"></i> 4.9 ★ Top Rated</span>
+                        </div>
+                        <h1 class="hero-title">Your Trusted Smile Partners</h1>
+                        <p class="hero-description">A modern, family-friendly, multispeciality dental practice tailored
+                            for your comfort and dental health.</p>
+                        <div class="hero-btns">
+                            <button class="btn btn-primary" onclick="openBookingModal()">Book an Appointment</button>
+                            <button class="btn btn-outline-white" onclick="switchTab('services')">Explore Services
+                                &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Feature Bar (6 Box Grid) -->
+            <div class="container feature-bar-section">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <h4>Comprehensive Care</h4>
+                        <p>Dental checkups, hygiene, & treatments.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-tooth"></i>
+                        <h4>Experienced Dentists</h4>
+                        <p>Skilled specialists for every need.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h4>Modern Technology</h4>
+                        <p>Advanced digital diagnostics & tools.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h4>Pain-Free Experience</h4>
+                        <p>Gentle care for stress-free visits.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                        <h4>Patient Centric</h4>
+                        <p>Customized plans for every patient.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h4>Easy Accessibility</h4>
+                        <p>Convenient central location.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Services (Home) -->
+            <div class="container featured-services-section">
+                <div class="section-header">
+                    <h2>OUR FEATURED SERVICES</h2>
+                    <p>Comprehensive multispeciality dental care tailored to your family's needs.</p>
+                </div>
+
+                <div class="services-home-grid">
+                    <div class="service-home-card">
+                        <div class="icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Teeth whitening, veneers, smile design & cosmetic transformations tailored to bring out your
+                            natural glow.</p>
+                        <a href="#services" class="link-btn" onclick="switchTab('services')">Learn more &rarr;</a>
+                    </div>
+                    <div class="service-home-card">
+                        <div class="icon-circle"><i class="fa-solid fa-teeth"></i></div>
+                        <h3>Orthodontics</h3>
+                        <p>Braces, clear aligners for all ages. Straighten teeth and align bites with modern invisible
+                            solutions.</p>
+                        <a href="#services" class="link-btn" onclick="switchTab('services')">Learn more &rarr;</a>
+                    </div>
+                    <div class="service-home-card">
+                        <div class="icon-circle"><i class="fa-solid fa-tooth"></i></div>
+                        <h3>Dental Implants</h3>
+                        <p>Permanent tooth replacement solution with natural look, durability and comfortable chewing
+                            functionality.</p>
+                        <a href="#services" class="link-btn" onclick="switchTab('services')">Learn more &rarr;</a>
+                    </div>
+                    <div class="service-home-card">
+                        <div class="icon-circle"><i class="fa-solid fa-kit-medical"></i></div>
+                        <h3>Root Canal Treatment</h3>
+                        <p>Pain-free treatment using advanced tools to save infected teeth and provide instant pain
+                            relief.</p>
+                        <a href="#services" class="link-btn" onclick="switchTab('services')">Learn more &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="center-btn-wrapper">
+                    <button class="btn btn-outline" onclick="switchTab('services')">View All Services &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Why Choose YourCompany -->
+            <div class="why-choose-section">
+                <div class="container why-choose-grid">
+                    <div class="why-choose-content">
+                        <h2>Why Choose YourCompany?</h2>
+                        <div class="why-list">
+                            <div class="why-item">
+                                <div class="icon-circle"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <h4>Tech-Driven Results</h4>
+                                    <p>Advanced digital imaging and modern techniques for precise, comfortable
+                                        treatments.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="icon-circle"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <h4>Expert Specialists</h4>
+                                    <p>A team of experienced dentists across all dental specialties working together
+                                        under one roof.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="icon-circle"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <h4>Patient-Centric Focus</h4>
+                                    <p>Personalized treatment plans, transparent pricing, and gentle care for
+                                        stress-free dental visits.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="icon-circle"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <h4>Hygienic & Ultra-Clean</h4>
+                                    <p>Strict sterilization protocols, medical-grade sanitization, and pristine clinic
+                                        environment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="why-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
+                            alt="Modern Dental Clinic Interior">
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Our Patients Say -->
+            <div class="container home-reviews-section">
+                <div class="section-header">
+                    <h2>WHAT OUR PATIENTS SAY</h2>
+                    <p><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> 4.9 | Based on 250+ verified
+                        reviews</p>
+                </div>
+
+                <div class="reviews-grid-home">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Rajesh M.</h4>
+                                <span>2 weeks ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Excellent service! Dr. Alex and the team made my dental procedure completely
+                                painless. The clinic is very clean and modern. Highly recommended!"</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Sneha I.</h4>
+                                <span>1 month ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Best dental clinic in town! The staff is so friendly and professional. My
+                                daughter loves coming here for her check-ups. Thank you YourCompany!"</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Karthik R.</h4>
+                                <span>3 weeks ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"I was terrified of dentists, but the team at YourCompany changed that completely. They
+                                are
+                                patient, gentle, and explain everything clearly. Pain-free treatment!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-btn-wrapper">
+                    <button class="btn btn-outline" onclick="switchTab('reviews')">View All Reviews</button>
+                </div>
+            </div>
+
+            <!-- Home CTA Banner -->
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Schedule Your Free Consultation Today</h2>
+                    <p>Call us at +1 (555) 000-0000 or book your appointment online in seconds.</p>
+                    <div class="btn-group">
+                        <button class="btn btn-white" onclick="openBookingModal()">Book An Appointment</button>
+                        <button class="btn btn-outline-white" onclick="openCallModal()"><i
+                                class="fa-solid fa-phone"></i> Call +1 (555) 000-0000</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             VIEW 2: ABOUT PAGE
+             ========================================== -->
+        <section id="view-about" class="page-view">
+            <div class="container about-hero">
+                <span class="badge badge-pink"><i class="fa-solid fa-award"></i> Premier Healthcare Practice</span>
+                <h1 style="font-size: 2.75rem; margin: 1rem 0 0.5rem 0;">About YourCompany</h1>
+                <p style="font-size: 1.1rem; color: var(--slate-600); max-width: 700px; margin: 0 auto;">
+                    Your trusted partners in dental excellence, bringing compassionate care and expertise to our
+                    community.
+                </p>
+            </div>
+
+            <!-- Our Story Section -->
+            <div class="container about-story-section">
+                <div class="story-grid">
+                    <div class="story-content">
+                        <h2>Our Story</h2>
+                        <p>YourCompany was founded with a vision to provide world-class dental care with a
+                            personal touch in a modern clinic environment. As a leading dental practice, we understand
+                            the importance of creating a warm, welcoming environment where every patient
+                            feels valued and cared for.</p>
+                        <p>Our multispeciality clinic brings together a team of highly qualified dental specialists
+                            under one roof, ensuring that you and your family receive comprehensive care for all your
+                            dental needs. From routine check-ups to complex procedures, we combine clinical excellence
+                            with compassionate service.</p>
+                        <p>What sets us apart is our commitment to patient comfort and satisfaction. We invest in the
+                            latest dental technology, maintain the highest standards of hygiene and sterilization, and
+                            take the time to understand each patient's unique needs and concerns. Our 4.9-star rating
+                            from over 250 patients reflects our dedication to excellence.</p>
+                        <p>Located conveniently in the central healthcare district, we serve our community with pride.
+                            Whether you're seeking preventive care, cosmetic improvements, or specialized treatment,
+                            YourCompany is here to help you achieve and maintain a healthy, beautiful smile.</p>
+                    </div>
+
+                    <div class="story-image-box">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80"
+                            alt="Clinic Interior Equipment">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="core-values-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Our Core Values</h2>
+                        <p>The principles that guide everything we do</p>
+                    </div>
+
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="icon-circle"><i class="fa-solid fa-heart"></i></div>
+                            <h3>Care</h3>
+                            <p>We treat every patient with empathy, respect, and genuine concern for their wellbeing.
+                            </p>
+                        </div>
+                        <div class="value-card">
+                            <div class="icon-circle"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3>Precision</h3>
+                            <p>Excellence in diagnosis and treatment through expertise and advanced technology.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="icon-circle"><i class="fa-solid fa-users"></i></div>
+                            <h3>Comfort</h3>
+                            <p>Creating a relaxing, anxiety-free environment for stress-free dental visits.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="icon-circle"><i class="fa-solid fa-award"></i></div>
+                            <h3>Community</h3>
+                            <p>Proud to serve our community with trusted, accessible dental care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet Our Expert Team -->
+            <div class="container team-section">
+                <div class="section-header">
+                    <h2>Meet Our Expert Team</h2>
+                    <p>Highly qualified dental specialists dedicated to your care</p>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1594824813571-24a69810d969?auto=format&fit=crop&w=600&q=80"
+                                alt="Dr. Alex Morgan">
+                        </div>
+                        <div class="team-details">
+                            <h3>Dr. Alex Morgan</h3>
+                            <span class="team-role">Founder & Chief Dentist</span>
+                            <div class="team-qual">BDS, MDS (Prosthodontics)</div>
+                            <div class="team-exp">14+ years experience</div>
+                            <p class="team-bio">Passionate about creating beautiful smiles with over 14 years of
+                                experience in cosmetic and restorative dentistry.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+                                alt="Dr. Sarah Jenkins">
+                        </div>
+                        <div class="team-details">
+                            <h3>Dr. Sarah Jenkins</h3>
+                            <span class="team-role">Orthodontist</span>
+                            <div class="team-qual">BDS, MDS (Orthodontics)</div>
+                            <div class="team-exp">10+ years experience</div>
+                            <p class="team-bio">Expert in creating perfect smiles through modern orthodontic techniques
+                                including invisible aligners.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
+                                alt="Dr. Michael Chen">
+                        </div>
+                        <div class="team-details">
+                            <h3>Dr. Michael Chen</h3>
+                            <span class="team-role">Endodontist</span>
+                            <div class="team-qual">BDS, MDS (Endodontics)</div>
+                            <div class="team-exp">12+ years experience</div>
+                            <p class="team-bio">Specializes in pain-free root canal treatments using the latest
+                                microscopic techniques.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80"
+                                alt="Dr. Emily Taylor">
+                        </div>
+                        <div class="team-details">
+                            <h3>Dr. Emily Taylor</h3>
+                            <span class="team-role">Pediatric Dentist</span>
+                            <div class="team-qual">BDS, MDS (Pedodontics)</div>
+                            <div class="team-exp">8+ years experience</div>
+                            <p class="team-bio">Dedicated to making dental visits fun and comfortable for children of
+                                all ages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Facility Gallery -->
+            <div class="facility-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Our Modern Facility</h2>
+                        <p>A clean, comfortable environment with state-of-the-art equipment</p>
+                    </div>
+
+                    <div class="facility-grid">
+                        <div class="facility-card">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
+                                alt="Treatment Room">
+                            <div class="facility-overlay">Treatment Room</div>
+                        </div>
+                        <div class="facility-card">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80"
+                                alt="Clinic Interior">
+                            <div class="facility-overlay">Clinic Interior</div>
+                        </div>
+                        <div class="facility-card">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80"
+                                alt="Reception & Staff">
+                            <div class="facility-overlay">Reception & Staff</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             VIEW 3: SERVICES PAGE
+             ========================================== -->
+        <section id="view-services" class="page-view">
+            <div class="container services-page-header">
+                <h1 style="font-size: 2.75rem; margin-bottom: 0.75rem;">Our Dental Services</h1>
+                <p style="font-size: 1.1rem; color: var(--slate-600); max-width: 720px; margin: 0 auto;">
+                    Comprehensive multispeciality dental care under one roof. From routine check-ups to advanced
+                    procedures, we've got your smile covered.
+                </p>
+            </div>
+
+            <div class="container">
+                <!-- 8 Service Cards Grid -->
+                <div class="services-main-grid">
+                    <!-- Service 1 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-tooth"></i></div>
+                        <h3>General Dentistry</h3>
+                        <p class="description">Comprehensive dental care including routine check-up, professional
+                            cleaning, and preventive treatments to maintain optimal oral health.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Regular dental check-ups, professional teeth cleaning, cavity fillings, fluoride
+                                treatments, and oral health assessments.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Cosmetic Dentistry</h3>
+                        <p class="description">Transform your smile with advanced cosmetic procedures including teeth
+                            whitening, veneers, and smile makeover.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Professional teeth whitening, porcelain veneers, dental bonding, smile design, and gum
+                                contouring for a beautiful smile.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-teeth"></i></div>
+                        <h3>Orthodontics</h3>
+                        <p class="description">Straighten teeth and correct bite issues with traditional braces or
+                            modern clear aligners for all ages.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Metal braces, ceramic braces, invisible aligners, retainers, and comprehensive
+                                orthodontic treatment planning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-kit-medical"></i></div>
+                        <h3>Root Canal Treatment</h3>
+                        <p class="description">Pain-free root canal therapy using advanced techniques to save infected
+                            teeth and relieve dental pain.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Endodontic treatment, single and multi-visit root canals, post and core procedures, and
+                                apicoectomy when needed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Dental Implants</h3>
+                        <p class="description">Permanent tooth replacement solution with titanium implants that look,
+                            feel, and function like natural teeth.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Single tooth implants, multiple implants, implant supported bridges and dentures, bone
+                                grafting, and sinus lift procedures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-user-nurse"></i></div>
+                        <h3>Oral Surgery</h3>
+                        <p class="description">Expert surgical procedures including wisdom teeth extraction, dental
+                            implants, and corrective jaw surgery.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Wisdom tooth removal, tooth extractions, dental implant placement, jaw surgery, and
+                                treatment of oral pathology.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-child"></i></div>
+                        <h3>Pediatric Dentistry</h3>
+                        <p class="description">Gentle, child-friendly dental care creating positive experiences for your
+                            little ones from infancy through adolescence.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Children's dental check-ups, cavity prevention, fluoride treatments, dental sealants, and
+                                early orthodontic assessment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="service-full-card">
+                        <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Periodontal Care</h3>
+                        <p class="description">Specialized treatment for gum disease, ensuring healthy gums and strong
+                            foundations for your teeth.</p>
+                        <div class="service-included-box">
+                            <h5>What's included:</h5>
+                            <p>Gum disease treatment, deep cleaning (scaling and root planing), gum surgery, and
+                                periodontal maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insurance & Payment Options -->
+                <div class="insurance-card">
+                    <h3>Insurance & Payment Options</h3>
+                    <div class="insurance-grid">
+                        <div class="insurance-col">
+                            <h4>We Accept</h4>
+                            <ul class="insurance-list">
+                                <li><i class="fa-solid fa-circle-check"></i> All major dental insurance plans</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Credit/Debit cards</li>
+                                <li><i class="fa-solid fa-circle-check"></i> UPI & Digital payments</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Cash payments</li>
+                            </ul>
+                        </div>
+                        <div class="insurance-col">
+                            <h4>Our Promise</h4>
+                            <ul class="insurance-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Transparent pricing with no hidden costs
+                                </li>
+                                <li><i class="fa-solid fa-circle-check"></i> Detailed treatment plans explained upfront
+                                </li>
+                                <li><i class="fa-solid fa-circle-check"></i> Flexible payment options available</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Insurance claim assistance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Services CTA -->
+                <div class="cta-banner">
+                    <h2>Ready to Transform Your Smile?</h2>
+                    <p>Book your appointment today and experience professional dental care</p>
+                    <div class="btn-group">
+                        <button class="btn btn-white" onclick="openCallModal()"><i class="fa-solid fa-phone"></i> Call
+                            Now</button>
+                        <button class="btn btn-outline-white" onclick="switchTab('contact')">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             VIEW 4: REVIEWS PAGE
+             ========================================== -->
+        <section id="view-reviews" class="page-view">
+            <div class="container reviews-page-header">
+                <h1 style="font-size: 2.75rem; margin-bottom: 1rem;">Patient Reviews</h1>
+
+                <div class="overall-score-box">
+                    <div class="big-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <div class="big-score-num">4.8</div>
+                    <div class="score-subtext">Based on 233 verified patient reviews</div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number">233</div>
+                        <div class="label">Total Reviews</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">4.8</div>
+                        <div class="label">Average Rating</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">95%</div>
+                        <div class="label">5-Star Reviews</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">100%</div>
+                        <div class="label">Recommended Us</div>
+                    </div>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="filter-container">
+                    <button class="filter-pill active" onclick="filterReviews('all', this)">All Reviews</button>
+                    <button class="filter-pill" onclick="filterReviews(5, this)">5 ★</button>
+                    <button class="filter-pill" onclick="filterReviews(4, this)">4 ★</button>
+                </div>
+            </div>
+
+            <!-- Reviews List Grid -->
+            <div class="container">
+                <div class="reviews-page-grid" id="reviewsContainer">
+                    <!-- Review 1 -->
+                    <div class="review-card" data-rating="5">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Rajesh M.</h4>
+                                <span>2 weeks ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Excellent service! Dr. Alex and the team made my dental procedure completely
+                                painless. The clinic is very clean and modern. Highly recommended!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card" data-rating="5">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Sneha I.</h4>
+                                <span>1 month ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Best dental clinic in town! The staff is so friendly and professional. My
+                                daughter loves coming here for her check-ups. Thank you YourCompany!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card" data-rating="5">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Karthik R.</h4>
+                                <span>3 weeks ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"I was terrified of dentists, but the team at YourCompany changed that completely. They
+                                are
+                                patient, gentle, and explain everything clearly. Pain-free treatment!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card" data-rating="5">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Priya N.</h4>
+                                <span>1 week ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Got my teeth whitening done here and the results are amazing! Dr. Sarah is excellent.
+                                The clinic environment is so welcoming and clean."</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card" data-rating="4">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Amit S.</h4>
+                                <span>2 months ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Very professional dental care. The clinic uses latest technology and maintains high
+                                hygiene standards. Booking appointments is easy."</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="review-card" data-rating="5">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Deepa K.</h4>
+                                <span>3 days ago</span>
+                            </div>
+                            <div class="stars-row">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p>"Outstanding experience! They really understand patient care and comfort. My
+                                entire family now comes here for dental treatments."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Review CTA -->
+                <div class="cta-banner">
+                    <h2>Have You Visited Us?</h2>
+                    <p>Share your experience and help others find quality dental care</p>
+                    <button class="btn btn-white" onclick="triggerGoogleReview()"><i class="fa-brands fa-google"></i>
+                        Write a Review on Google</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             VIEW 5: CONTACT PAGE
+             ========================================== -->
+        <section id="view-contact" class="page-view">
+            <div class="container contact-page-header">
+                <h1 style="font-size: 2.75rem; margin-bottom: 0.75rem;">Get In Touch</h1>
+                <p style="font-size: 1.1rem; color: var(--slate-600); max-width: 700px; margin: 0 auto;">
+                    Ready to schedule your appointment? Contact us today and let's start your journey to a healthier
+                    smile.
+                </p>
+            </div>
+
+            <div class="container contact-grid">
+                <!-- Left: Clinic Info -->
+                <div class="contact-info-col">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Visit Our Clinic</h2>
+
+                    <div class="info-card">
+                        <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Healthcare Ave, Suite 100, Medical District, City, State 12345</p>
+                            <p
+                                style="color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-top: 0.25rem;">
+                                Landmark: Central Medical Plaza</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:15550000000"
+                                style="font-weight: 700; color: var(--slate-900); font-size: 1.1rem;">+1 (555)
+                                000-0000</a>
+                            <p style="font-size: 0.825rem; color: var(--slate-500);">Call us for appointments</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:care@yourcompany.com" style="font-weight: 600;">care@yourcompany.com</a>
+                            <p style="font-size: 0.825rem; color: var(--slate-500);">Send us your queries</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+                        <div style="flex-grow: 1;">
+                            <h4>Opening Hours</h4>
+                            <table class="hours-table">
+                                <tr>
+                                    <td>Monday:</td>
+                                    <td>10:00 AM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday:</td>
+                                    <td>10:00 AM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday:</td>
+                                    <td>10:00 AM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday:</td>
+                                    <td>10:00 AM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday:</td>
+                                    <td>10:00 AM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday:</td>
+                                    <td>10:00 AM - 4:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday:</td>
+                                    <td style="color: var(--accent-pink); font-weight: 700;">Closed</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Send Message Form -->
+                <div class="contact-form-card">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Enter your full name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNum">Phone Number *</label>
+                            <input type="tel" id="phoneNum" class="form-control" placeholder="Enter your phone number"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailAddr">Email Address</label>
+                            <input type="email" id="emailAddr" class="form-control"
+                                placeholder="Enter your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceInterest">Service of Interest</label>
+                            <select id="serviceInterest" class="form-control">
+                                <option value="">e.g., Root Canal, Teeth Whitening</option>
+                                <option value="General Dentistry">General Dentistry</option>
+                                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                                <option value="Orthodontics">Orthodontics / Braces</option>
+                                <option value="Root Canal Treatment">Root Canal Treatment</option>
+                                <option value="Dental Implants">Dental Implants</option>
+                                <option value="Oral Surgery">Oral Surgery</option>
+                                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                                <option value="Periodontal Care">Periodontal Care</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="messageText">Message</label>
+                            <textarea id="messageText" class="form-control"
+                                placeholder="Tell us about your dental concerns or questions."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="container map-section">
+                <div class="section-header">
+                    <h2>Find Us On Map</h2>
+                </div>
+
+                <div class="map-wrapper">
+                    <div class="map-iframe-box">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.987796918987!2d77.6715!3d12.8445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c683b555555%3A0x123456789abcdef!2sElectronic%20City%20Phase%201%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="map-subtext">
+                        <strong>Easy to Find:</strong> Located in Central Medical Plaza, Suite 100, Main Healthcare
+                        Avenue.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="brand-logo">
+                    <div class="brand-icon demo-brand-icon">YC</div>
+                    <div class="brand-text">
+                        <h1 class="demo-brand-name">YourCompany</h1>
+                        <span class="demo-brand-sub">YourCompany - Multispeciality Dental Clinic</span>
+                    </div>
+                </div>
+                <p>Comprehensive multispeciality dental practice tailored for your comfort, precision treatment, and
+                    pristine oral health.</p>
+                <span class="badge badge-pink"><i class="fa-solid fa-award"></i> Premier Healthcare Practice</span>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" onclick="switchTab('home')">Home</a></li>
+                    <li><a href="#about" onclick="switchTab('about')">About Us</a></li>
+                    <li><a href="#services" onclick="switchTab('services')">Our Services</a></li>
+                    <li><a href="#reviews" onclick="switchTab('reviews')">Patient Reviews</a></li>
+                    <li><a href="#contact" onclick="switchTab('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services" onclick="switchTab('services')">Cosmetic Dentistry</a></li>
+                    <li><a href="#services" onclick="switchTab('services')">Orthodontics</a></li>
+                    <li><a href="#services" onclick="switchTab('services')">Root Canal Therapy</a></li>
+                    <li><a href="#services" onclick="switchTab('services')">Dental Implants</a></li>
+                    <li><a href="#services" onclick="switchTab('services')">Pediatric Care</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot"
+                        style="color: var(--primary);"></i> 123 Healthcare Ave, Suite 100, City, State 12345</p>
+                <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--primary);"></i> <span
+                        class="demo-phone">+1 (555) 000-0000</span></p>
+                <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
+                    <span class="demo-email">care@yourcompany.com</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 <span class="demo-brand-name">YourCompany</span>. All Rights Reserved. Designed with
+                care for your smile.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         MODAL: APPOINTMENT BOOKING
+         ========================================== -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--slate-900);">Book an Appointment</h3>
+            <p style="font-size: 0.9rem; color: var(--slate-500); margin-bottom: 1.5rem;">Select your preferred date &
+                service to reserve your consultation slot.</p>
+
+            <form onsubmit="handleBookingSubmit(event)">
+                <div class="form-group">
+                    <label>Patient Name *</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Doctor</label>
+                    <select class="form-control">
+                        <option value="Any Specialist">Any Available Specialist</option>
+                        <option value="Dr. Alex Morgan">Dr. Alex Morgan (Prosthodontics)</option>
+                        <option value="Dr. Sarah Jenkins">Dr. Sarah Jenkins (Orthodontist)</option>
+                        <option value="Dr. Michael Chen">Dr. Michael Chen (Endodontist)</option>
+                        <option value="Dr. Emily Taylor">Dr. Emily Taylor (Pediatric)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Confirm
+                    Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL: CALL DIAL
+         ========================================== -->
+    <div class="modal-overlay" id="callModal">
+        <div class="modal-box" style="text-align: center;">
+            <button class="modal-close" onclick="closeCallModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="icon-circle" style="margin: 0 auto 1rem auto; width: 64px; height: 64px; font-size: 1.6rem;">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Call YourCompany</h3>
+            <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1.5rem;">Our reception desk is
+                available Mon-Fri (9am-7pm), Sat (9am-4pm).</p>
+            <a href="tel:15550000000" class="btn btn-primary" style="font-size: 1.2rem; width: 100%; padding: 1rem;">
+                <i class="fa-solid fa-phone"></i> Call <span class="demo-phone">+1 (555) 000-0000</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toastMsg">Action completed successfully!</span>
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT CONTROLLERS
+         ========================================== -->
+    <script>
+
+        // Tab Router / View Switcher
+        function switchTab(tabId) {
+            // Hide all view sections
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(v => v.classList.remove('active-view'));
+
+            // Show selected view
+            const targetView = document.getElementById('view-' + tabId);
+            if (targetView) {
+                targetView.classList.add('active-view');
+            }
+
+            // Update Nav Active links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + tabId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu if open
+            document.getElementById('navMenu').classList.remove('open');
+
+            // Scroll smoothly to top of window
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle & Backdrop Control
+        function toggleMobileMenu() {
+            const menu = document.getElementById('navMenu');
+            const backdrop = document.getElementById('mobileBackdrop');
+            const isOpen = menu.classList.contains('open');
+
+            if (isOpen) {
+                menu.classList.remove('open');
+                if (backdrop) backdrop.classList.remove('show');
+            } else {
+                menu.classList.add('open');
+                if (backdrop) backdrop.classList.add('show');
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('navMenu');
+            const backdrop = document.getElementById('mobileBackdrop');
+            if (menu) menu.classList.remove('open');
+            if (backdrop) backdrop.classList.remove('show');
+        }
+
+        // Filter Reviews System
+        function filterReviews(rating, btnElem) {
+            const pills = document.querySelectorAll('.filter-pill');
+            pills.forEach(p => p.classList.remove('active'));
+            btnElem.classList.add('active');
+
+            const cards = document.querySelectorAll('#reviewsContainer .review-card');
+            cards.forEach(card => {
+                const cardRating = parseInt(card.getAttribute('data-rating'));
+                if (rating === 'all' || cardRating === rating) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modals Control
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('open');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('open');
+        }
+
+        function openCallModal() {
+            document.getElementById('callModal').classList.add('open');
+        }
+
+        function closeCallModal() {
+            document.getElementById('callModal').classList.remove('open');
+        }
+
+        // Form Submit Handlers & Toast
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Your message has been sent successfully. We will get back to you shortly.');
+            document.getElementById('contactForm').reset();
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            closeBookingModal();
+            showToast('Appointment request received! Our clinic coordinator will call you to confirm your slot.');
+        }
+
+        function triggerGoogleReview() {
+            const brandName = document.querySelector('.demo-brand-name')?.textContent || 'YourCompany';
+            showToast('Redirecting to Google Reviews for ' + brandName + '...');
+            setTimeout(() => {
+                window.open('https://maps.google.com', '_blank');
+            }, 1000);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (['home', 'about', 'services', 'reviews', 'contact'].includes(hash)) {
+                switchTab(hash);
+            }
+        });
+    </script>
+    <!-- STICKY MOBILE BOTTOM BAR -->
+    <div class="mobile-sticky-bar">
+        <button class="btn btn-outline-sticky" onclick="openCallModal()">
+            <i class="fa-solid fa-phone"></i> Call Clinic
+        </button>
+        <button class="btn btn-primary-sticky" onclick="openBookingModal()">
+            <i class="fa-solid fa-calendar-check"></i> Book Visit
+        </button>
+    </div>
+</body>
+
+</html>
